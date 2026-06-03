@@ -101,7 +101,7 @@ export function HeroBanner() {
         </div>
       </div>
 
-      {/* Navigation Arrows */}
+      {/* Navigation Arrows
       <button
         onClick={scrollPrev}
         className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-white/80 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all z-20"
@@ -115,7 +115,7 @@ export function HeroBanner() {
         aria-label="Próximo slide"
       >
         <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-foreground" />
-      </button>
+      </button> */}
     </section>
   )
 }

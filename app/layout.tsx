@@ -1,4 +1,3 @@
-import { Analytics } from '@vercel/analytics/next'
 import type { Metadata } from 'next'
 import { Roboto } from 'next/font/google'
 import './globals.css'
@@ -27,7 +26,6 @@ export default function RootLayout({
     <html lang="pt-BR" className="bg-background">
       <body className={`${roboto.variable} font-sans antialiased`}>
         {children}
-        {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
   )
