@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Roboto } from 'next/font/google'
 import './globals.css'
+import { sitePath } from '@/lib/site-path'
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -12,8 +13,8 @@ export const metadata: Metadata = {
   title: 'MBS Entulhos - Aluguel de Caçambas para Entulho',
   description: 'Aluguel de caçambas para entulho em sua região. Serviço rápido, preço justo e atendimento de qualidade.',
   icons: {
-    icon: '/images/photo-about.png',
-    apple: '/images/photo-about.png',
+    icon: sitePath('/images/photo-about.png'),
+    apple: sitePath('/images/photo-about.png'),
   },
 }
 

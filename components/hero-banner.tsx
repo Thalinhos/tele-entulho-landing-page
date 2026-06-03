@@ -5,6 +5,7 @@ import useEmblaCarousel from "embla-carousel-react"
 import Autoplay from "embla-carousel-autoplay"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { useCallback } from "react"
+import { sitePath } from "@/lib/site-path"
 
 const bannerSlides = [
 
@@ -67,7 +68,7 @@ export function HeroBanner() {
             <div key={slide.id} className="flex-[0_0_100%] min-w-0">
               <div className="h-[300px] md:h-[450px] lg:h-[500px] relative overflow-hidden">
                 <Image
-                  src={slide.image}
+                  src={sitePath(slide.image)}
                   alt={slide.title}
                   fill
                   className="object-cover scale-110 blur-sm"

@@ -4,6 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
+import { sitePath } from "@/lib/site-path"
 
 const navLinks = [
   { href: "#inicio", label: "Início" },
@@ -23,7 +24,7 @@ export function Header() {
           <Link href="/" className="flex items-center gap-2">
             <div className="relative w-10 h-10 md:w-12 md:h-12 shrink-0">
               <Image
-                src="/images/photo-about.png"
+                src={sitePath("/images/photo-about.png")}
                 alt="MBS Entulhos"
                 fill
                 className="object-contain p-1"

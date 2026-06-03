@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { Clock, Shield, Recycle, Truck } from "lucide-react"
+import { sitePath } from "@/lib/site-path"
 
 
 const anosDeExperiencia = new Date().getFullYear() - 2014
@@ -42,7 +43,7 @@ export function AboutSection() {
               <div className="absolute inset-0 flex items-center justify-center p-1 md:p-2">
                 <div className="relative w-full h-full max-w-xl max-h-xl">
                   <Image
-                    src="/images/photo-about.png"
+                    src={sitePath("/images/photo-about.png")}
                     alt="MBS Entulhos"
                     fill
                     className="object-contain p-0 drop-shadow-lg"
