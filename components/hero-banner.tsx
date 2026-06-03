@@ -28,16 +28,22 @@ const bannerSlides = [
   },
   {
     id: 4,
-    image: "/images/5.avif",
+    image: "/images/1.avif",
     title: "Solução Em Entulho",
     subtitle: "Serviço rápido, limpo e seguro",
   },
   {
     id: 5,
-    image: "/images/4.avif",
+    image: "/images/2.avif",
     title: "Caçambas Para Toda Obra",
     subtitle: "Tamanhos ideais para cada projeto",
-  }
+  },
+  {
+    id: 6,
+    image: "/images/3.avif",
+    title: "Atendimento Profissional",
+    subtitle: "Equipe pronta para sua demanda",
+  },
 ]
 
 export function HeroBanner() {
