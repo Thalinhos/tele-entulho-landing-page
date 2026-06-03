@@ -21,9 +21,9 @@ export function Header() {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="relative w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden bg-white ring-1 ring-black/5 shadow-sm shrink-0">
+            <div className="relative w-10 h-10 md:w-12 md:h-12 shrink-0">
               <Image
-                src="/images/logo-icon.png"
+                src="/images/photo-about.png"
                 alt="MBS Entulhos"
                 fill
                 className="object-contain p-1"

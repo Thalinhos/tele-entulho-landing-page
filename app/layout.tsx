@@ -10,12 +10,11 @@ const roboto = Roboto({
 })
 
 export const metadata: Metadata = {
-  title: 'Entulho Fácil - Aluguel de Caçambas',
+  title: 'MBS Entulhos - Aluguel de Caçambas para Entulho',
   description: 'Aluguel de caçambas para entulho em sua região. Serviço rápido, preço justo e atendimento de qualidade.',
-  generator: 'v0.app',
   icons: {
-    icon: '/images/logo-icon.png',
-    apple: '/images/logo-icon.png',
+    icon: '/images/photo-about.png',
+    apple: '/images/photo-about.png',
   },
 }
 

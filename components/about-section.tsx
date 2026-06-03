@@ -1,6 +1,9 @@
 import Image from "next/image"
 import { Clock, Shield, Recycle, Truck } from "lucide-react"
 
+
+const anosDeExperiencia = new Date().getFullYear() - 2014
+
 const beneficios = [
   {
     icon: Truck,
@@ -66,7 +69,7 @@ export function AboutSection() {
                 para quem precisa descartar entulho de obras e reformas.
               </p>
               <p>
-                Com mais de 10 anos de experiência no mercado, nos tornamos referência 
+                Com mais de {anosDeExperiencia} anos de experiência no mercado, nos tornamos referência 
                 em aluguel de caçambas na região, sempre priorizando a satisfação do cliente 
                 e o respeito ao meio ambiente.
               </p>
