@@ -56,12 +56,14 @@ export function ServicosSection() {
               key={servico.titulo}
               className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow group"
             >
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                <servico.icon className="w-7 h-7 text-primary" />
+              <div className="flex items-start justify-between gap-4 mb-2 md:mb-4">
+                <h3 className="text-lg font-semibold text-foreground leading-tight">
+                  {servico.titulo}
+                </h3>
+                <div className="w-10 h-10 shrink-0 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                  <servico.icon className="w-5 h-5 text-primary" />
+                </div>
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">
-                {servico.titulo}
-              </h3>
               <p className="text-muted-foreground text-sm">
                 {servico.descricao}
               </p>

@@ -3,10 +3,9 @@ import Link from "next/link"
 
 const quickLinks = [
   { href: "#inicio", label: "Início" },
-  { href: "#cacambas", label: "Nossas Caçambas" },
   { href: "#servicos", label: "Serviços" },
-  { href: "#sobre", label: "Sobre Nós" },
   { href: "#contato", label: "Contato" },
+  { href: "#sobre", label: "Sobre Nós" },
 ]
 
 // const legalLinks = [
@@ -86,7 +85,7 @@ export function Footer() {
             <ul className="space-y-3 text-sm text-background/70">
               <li>
                 <strong className="text-background/90">Razão Social:</strong><br />
-                Entulho Fácil LTDA
+                MBS Entulhos Ltda
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-primary mt-0.5 shrink-0" />
@@ -125,7 +124,7 @@ export function Footer() {
       <div className="border-t border-background/10">
         <div className="container mx-auto px-4 py-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-2 text-xs text-background/50">
-            <p>&copy; {new Date().getFullYear()} Entulho Fácil. Todos os direitos reservados.</p>
+            <p>&copy; {new Date().getFullYear()} MBS Entulhos. Todos os direitos reservados.</p>
             <p>CNPJ: 21.338.754/0001-26</p>
           </div>
         </div>

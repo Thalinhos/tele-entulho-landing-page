@@ -13,7 +13,7 @@ const beneficios = [
   {
     icon: Clock,
     titulo: "Atendimento Comercial",
-    descricao: "Disponíveis para atender você de Segunda a Sábado, das 9h às 18h, para tirar dúvidas e realizar orçamentos",
+    descricao: "Disponíveis para atender você de Segunda a Sábado, das 9h às 18h",
   },
   {
     icon: Shield,
@@ -60,7 +60,7 @@ export function AboutSection() {
               Sobre Nós
             </span>
             <h2 className="text-2xl md:text-4xl font-bold text-foreground mt-2 mb-6 text-balance">
-              ENTULHO FÁCIL
+              MBS Entulhos
             </h2>
             
             <div className="space-y-4 text-muted-foreground">
@@ -78,22 +78,27 @@ export function AboutSection() {
                 com agilidade e eficiência. Trabalhamos com caçambas de diversos tamanhos 
                 para atender desde pequenas reformas até grandes construções.
               </p>
-              <p className="font-semibold text-foreground">
-                Equipe Entulho Fácil
-              </p>
+  
             </div>
 
             {/* Benefícios */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 mt-8">
               {beneficios.map((beneficio) => (
-                <div key={beneficio.titulo} className="flex flex-col">
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                <div
+                  key={beneficio.titulo}
+                  className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow group"
+                >
+                  <div className="flex items-start justify-between gap-4 mb-2 md:mb-4">
+                    <h3 className="text-lg font-semibold text-foreground leading-tight">
+                      {beneficio.titulo}
+                    </h3>
+                    <div className="w-10 h-10 shrink-0 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                       <beneficio.icon className="w-5 h-5 text-primary" />
                     </div>
-                    <h3 className="font-semibold text-foreground">{beneficio.titulo}</h3>
                   </div>
-                  <p className="text-sm text-muted-foreground">{beneficio.descricao}</p>
+                  <p className="text-muted-foreground text-sm">
+                    {beneficio.descricao}
+                  </p>
                 </div>
               ))}
             </div>
