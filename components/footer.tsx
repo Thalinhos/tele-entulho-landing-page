@@ -9,11 +9,11 @@ const quickLinks = [
   { href: "#contato", label: "Contato" },
 ]
 
-const legalLinks = [
-  { href: "#", label: "Termos de Uso" },
-  { href: "#", label: "Política de Privacidade" },
-  { href: "#", label: "Política de Cookies" },
-]
+// const legalLinks = [
+//   { href: "#", label: "Termos de Uso" },
+//   { href: "#", label: "Política de Privacidade" },
+//   { href: "#", label: "Política de Cookies" },
+// ]
 
 export function Footer() {
   return (
@@ -101,7 +101,7 @@ export function Footer() {
             </ul>
 
             {/* Legal Links */}
-            <div className="mt-6">
+            {/* <div className="mt-6">
               <h5 className="font-semibold text-background mb-2 text-sm">Legal</h5>
               <ul className="space-y-1">
                 {legalLinks.map((link) => (
@@ -116,7 +116,7 @@ export function Footer() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -126,7 +126,7 @@ export function Footer() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-2 text-xs text-background/50">
             <p>&copy; {new Date().getFullYear()} Entulho Fácil. Todos os direitos reservados.</p>
-            <p>CNPJ: 00.000.000/0001-00</p>
+            <p>CNPJ: 21.338.754/0001-26</p>
           </div>
         </div>
       </div>

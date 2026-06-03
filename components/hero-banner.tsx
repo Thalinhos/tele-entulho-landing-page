@@ -7,42 +7,37 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 import { useCallback } from "react"
 
 const bannerSlides = [
+
   {
     id: 1,
-    image: "/images/ac5b5d_d46f699169b142a4ab3aec96f1f257e0.avif",
-    title: "Aluguel de Caçambas",
-    subtitle: "Para obra, reforma ou limpeza",
-  },
-  {
-    id: 2,
-    image: "/images/ac5b5d_d3d7ea11ddfd4f81807e98f10f67d959.avif",
+    image: "/images/1.avif",
     title: "Entrega Rápida",
     subtitle: "Em até 24 horas na sua obra",
   },
   {
+    id: 2,
+    image: "/images/2.avif",
+    title: "Aluguel de Caçambas",
+    subtitle: "Para obra, reforma ou limpeza",
+  },
+  {
     id: 3,
-    image: "/images/ac5b5d_ccbd36928b4e478685d12d29ae3860b8.avif",
+    image: "/images/3.avif",
     title: "Atendimento Profissional",
     subtitle: "Equipe pronta para sua demanda",
   },
   {
     id: 4,
-    image: "/images/ac5b5d_54f292f45ea94f9ab2790d4a390cc63f.avif",
-    title: "Caçambas Para Toda Obra",
-    subtitle: "Tamanhos ideais para cada projeto",
-  },
-  {
-    id: 5,
-    image: "/images/ac5b5d_3c56631413d74add89a0777feb524b48.avif",
+    image: "/images/5.avif",
     title: "Solução Em Entulho",
     subtitle: "Serviço rápido, limpo e seguro",
   },
   {
-    id: 6,
-    image: "/images/ac5b5d_154564d322cf45ffaa1b8740afe9a9db.avif",
-    title: "Coleta E Descarte",
-    subtitle: "Processo ágil do início ao fim",
-  },
+    id: 5,
+    image: "/images/4.avif",
+    title: "Caçambas Para Toda Obra",
+    subtitle: "Tamanhos ideais para cada projeto",
+  }
 ]
 
 export function HeroBanner() {
@@ -75,12 +70,11 @@ export function HeroBanner() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/35 to-black/20" />
                 <div className="relative z-10 h-full flex items-center justify-center text-white px-4">
-                  <div className="text-center max-w-3xl rounded-3xl px-6 py-5 md:px-10 md:py-7 bg-gradient-to-b from-black/10 via-black/5 to-orange-500/5 backdrop-blur-[0.3px] border border-white/0 shadow-[0_6px_16px_rgba(0,0,0,0.08)]">
+                  <div className="text-center max-w-3xl rounded-3xl px-6 py-5 md:px-10 md:py-7 bg-black/10 backdrop-blur-[0.3px] border border-white/0 shadow-[0_6px_16px_rgba(0,0,0,0.08)]">
                     <h1
                       className="text-3xl md:text-5xl lg:text-6xl font-bold text-balance"
                       style={{
-                        textShadow:
-                          '0 2px 4px rgba(0, 0, 0, 0.7), 0 8px 22px rgba(255, 138, 43, 0.32)',
+                        textShadow: '0 2px 4px rgba(0, 0, 0, 0.75)',
                       }}
                     >
                       {slide.title}
@@ -88,8 +82,7 @@ export function HeroBanner() {
                     <p
                       className="mt-4 text-lg md:text-xl lg:text-2xl opacity-90 text-balance"
                       style={{
-                        textShadow:
-                          '0 2px 3px rgba(0, 0, 0, 0.65), 0 6px 16px rgba(255, 138, 43, 0.22)',
+                        textShadow: '0 2px 3px rgba(0, 0, 0, 0.7)',
                       }}
                     >
                       {slide.subtitle}
