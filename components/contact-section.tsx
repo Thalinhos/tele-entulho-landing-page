@@ -30,8 +30,8 @@ export function ContactSection() {
               </div>
               <div>
                 <h3 className="font-semibold text-foreground mb-1">Telefone</h3>
-                <p className="text-primary font-bold text-lg">(51) 3407-2987</p>
-                <p className="text-muted-foreground text-sm">(51) 9997-0887</p>
+                <p className="text-muted-foreground text-lg">(51) 3407-2987</p>
+                <p className="text-muted-foreground text-lg">(51) 99997-0887</p>
               </div>
             </div>
 
@@ -42,7 +42,7 @@ export function ContactSection() {
               </div>
               <div>
                 <h3 className="font-semibold text-foreground mb-1">E-mail</h3>
-                <p className="text-primary font-bold">mbsentulho@hotmail.com</p>
+                <p className="text-muted-foreground text-lg">mbsentulho@hotmail.com</p>
               </div>
             </div>
 
