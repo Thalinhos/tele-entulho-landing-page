@@ -9,8 +9,8 @@ const beneficios = [
   },
   {
     icon: Clock,
-    titulo: "Atendimento 24h",
-    descricao: "Disponíveis para atender você a qualquer momento, inclusive finais de semana",
+    titulo: "Atendimento Comercial",
+    descricao: "Disponíveis para atender você de Segunda a Sábado, das 9h às 18h, para tirar dúvidas e realizar orçamentos",
   },
   {
     icon: Shield,
@@ -34,16 +34,16 @@ export function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Imagem/Visual */}
           <div className="relative">
-            <div className="aspect-square max-w-md mx-auto lg:max-w-none rounded-2xl overflow-hidden shadow-2xl bg-white border border-black/5">
-              <div className="absolute inset-0 bg-gradient-to-br from-orange-50 via-white to-amber-50" />
-              <div className="absolute inset-0 flex items-center justify-center p-8">
-                <div className="relative w-full h-full max-w-sm max-h-sm">
+            <div className="aspect-square w-full max-w-2xl mx-auto lg:max-w-4xl overflow-hidden bg-transparent">
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-50/40 via-transparent to-amber-50/40" />
+              <div className="absolute inset-0 flex items-center justify-center p-1 md:p-2">
+                <div className="relative w-full h-full max-w-xl max-h-xl">
                   <Image
-                    src="/images/logo-icon.png"
+                    src="/images/photo-about.png"
                     alt="MBS Entulhos"
                     fill
-                    className="object-contain p-2 drop-shadow-xl"
-                    sizes="(max-width: 1024px) 80vw, 420px"
+                    className="object-contain p-0 drop-shadow-lg"
+                    sizes="(max-width: 1024px) 100vw, 840px"
                     priority
                   />
                 </div>
