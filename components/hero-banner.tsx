@@ -76,7 +76,7 @@ export function HeroBanner() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/35 to-black/20" />
                 <div className="relative z-10 h-full flex items-center justify-center text-white px-4">
-                  <div className="text-center max-w-3xl rounded-3xl px-6 py-5 md:px-10 md:py-7 bg-black/10 backdrop-blur-[0.3px] border border-white/0 shadow-[0_6px_16px_rgba(0,0,0,0.08)]">
+                  <div className="text-center max-w-3xl rounded-3xl px-6 py-5 md:px-10 md:py-7">
                     <h1
                       className="text-3xl md:text-5xl lg:text-6xl font-bold text-balance"
                       style={{
