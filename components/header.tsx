@@ -1,87 +1,60 @@
-"use client"
-
-import Image from "next/image"
 import Link from "next/link"
-import { useState } from "react"
-import { Menu, X } from "lucide-react"
-import { sitePath } from "@/lib/site-path"
+import { Clock, MapPin, Phone } from "lucide-react"
 
 const navLinks = [
-  { href: "#inicio", label: "Início" },
-  { href: "#servicos", label: "Serviços" },
-  { href: "#contato", label: "Contato" },
   { href: "#sobre", label: "Sobre" },
+  { href: "#servicos", label: "Serviços" },
+  { href: "#tamanhos", label: "Caçambas" },
+  { href: "#contato", label: "Contato" },
 ]
 
 export function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="relative w-10 h-10 md:w-12 md:h-12 shrink-0">
-              <Image
-                src={sitePath("/images/photo-about.png")}
-                alt="MBS Entulhos"
-                fill
-                className="object-contain p-1"
-                sizes="48px"
-                priority
-              />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-lg md:text-xl font-bold text-primary">MBS Entulhos</span>
-              <span className="text-xs text-muted-foreground">Caçambas & Entulho</span>
-            </div>
-          </Link>
+    <header className="sticky top-0 z-50 bg-background hairline">
+      <div className="bg-ink text-cream text-[0.72rem]">
+        <div className="container flex items-center justify-between py-2.75">
+          <div className="flex items-center gap-4">
+            <span className="flex items-center text-sm gap-1.5 whitespace-nowrap leading-none">
+              <Clock className="h-3.5 w-3.5" aria-hidden="true" />
+              Seg–Sáb · 9h–18h
+            </span>
+            <span className="hidden items-center text-sm gap-1.5 whitespace-nowrap leading-none sm:flex">
+              <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
+              Porto Alegre, RS
+            </span>
+          </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <a href="tel:+555199970887" className="flex text-sm items-center gap-1.5 whitespace-nowrap leading-none transition-colors hover:text-primary">
+            <Phone className="h-3.5 w-3.5" aria-hidden="true" />
+            (51) 99997-0887
+          </a>
+        </div>
+      </div>
+
+      <div className="bg-background">
+        <div className="container flex h-17.75 items-center justify-between">
+          <a href="#" className="flex items-baseline gap-2">
+            <span className="font-display text-[1.4rem] leading-none">MBS</span>
+            <span className="text-[0.80rem] uppercase tracking-[0.2em] text-muted-foreground">Entulhos</span>
+          </a>
+
+          <nav className="hidden items-center gap-8 text-[1.03rem] font-medium md:flex">
             {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-foreground/80 hover:text-primary transition-colors font-medium"
-              >
+              <Link key={link.href} href={link.href} className="transition-colors hover:text-primary">
                 {link.label}
               </Link>
             ))}
           </nav>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
+          <a
+            href="https://wa.me/5551999970887?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20de%20ca%C3%A7amba."
+            target="_blank"
+            rel="noreferrer"
+            className="bg-primary px-6.5 py-3 text-[0.9rem] font-semibold text-primary-foreground transition-colors hover:bg-ink hover:text-cream"
           >
-            {isMenuOpen ? (
-              <X className="w-6 h-6 text-foreground" />
-            ) : (
-              <Menu className="w-6 h-6 text-foreground" />
-            )}
-          </button>
+            Pedir Orçamento
+          </a>
         </div>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <nav className="md:hidden py-4 border-t">
-            <div className="flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-foreground/80 hover:text-primary transition-colors font-medium px-2 py-1"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-          </nav>
-        )}
       </div>
     </header>
   )

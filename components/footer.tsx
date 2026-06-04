@@ -8,12 +8,6 @@ const quickLinks = [
   { href: "#sobre", label: "Sobre Nós" },
 ]
 
-// const legalLinks = [
-//   { href: "#", label: "Termos de Uso" },
-//   { href: "#", label: "Política de Privacidade" },
-//   { href: "#", label: "Política de Cookies" },
-// ]
-
 export function Footer() {
   return (
     <footer className="bg-foreground text-background">
@@ -26,8 +20,9 @@ export function Footer() {
               <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
                 <Truck className="w-5 h-5 text-primary-foreground" />
               </div>
-              <div className="flex flex-col">
-                <span className="text-lg font-bold text-primary">Entulho Fácil</span>
+              <div className="flex gap-1.5 items-center align-center">
+                <span className="text-lg font-bold text-primary">MBS</span>
+                <span className="text-sm text-background/70">Entulhos</span>
               </div>
             </Link>
             <p className="text-background/70 text-sm mb-4">
@@ -39,7 +34,6 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Links Rápidos */}
           <div>
             <h4 className="font-semibold text-background mb-4">Links Rápidos</h4>
             <ul className="space-y-2">
@@ -57,7 +51,6 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contato */}
           <div>
             <h4 className="font-semibold text-background mb-4">Contato</h4>
             <ul className="space-y-3">
@@ -79,7 +72,6 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Dados da Empresa */}
           <div>
             <h4 className="font-semibold text-background mb-4">Dados da Empresa</h4>
             <ul className="space-y-3 text-sm text-background/70">
@@ -98,29 +90,10 @@ export function Footer() {
                 Seg-Sáb: 08:00 - 18:00
               </li>
             </ul>
-
-            {/* Legal Links */}
-            {/* <div className="mt-6">
-              <h5 className="font-semibold text-background mb-2 text-sm">Legal</h5>
-              <ul className="space-y-1">
-                {legalLinks.map((link) => (
-                  <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="text-background/70 hover:text-primary transition-colors text-xs flex items-center gap-1"
-                    >
-                      <span className="text-primary">+</span>
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div> */}
           </div>
         </div>
       </div>
 
-      {/* Copyright Bar */}
       <div className="border-t border-background/10">
         <div className="container mx-auto px-4 py-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-2 text-xs text-background/50">

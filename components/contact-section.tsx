@@ -1,97 +1,100 @@
 "use client"
 
-import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Clock, Mail, MapPin, MessageCircle, Send } from "lucide-react"
 
 export function ContactSection() {
-  const whatsappNumber = "555199970887" // Substitua pelo número real
-  const whatsappMessage = encodeURIComponent("Olá! Gostaria de solicitar um orçamento para aluguel de caçamba.")
+  const whatsappBase = "https://wa.me/5551999970887"
 
   return (
-    <section id="contato" className="py-16 md:py-24 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          {/* Título */}
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-4 text-balance">
-              Entre em Contato
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-pretty">
-              Solicite um orçamento sem compromisso. Respondemos rapidamente!
+    <section id="contato" className="py-24 md:py-32 bg-background text-foreground">
+      <div className="container">
+        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-start">
+          <div>
+            <span className="text-xs uppercase tracking-[0.3em] text-primary font-semibold">Contato</span>
+            <h2 className="text-4xl md:text-6xl mt-4">Vamos falar.</h2>
+            <p className="mt-6 text-muted-foreground max-w-md leading-relaxed">
+              Solicite um orçamento sem compromisso. Atendimento direto, sem intermediário.
             </p>
-          </div>
 
-          {/* Cards de contato */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-            {/* Telefone */}
-            <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-6 flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center shrink-0">
-                <Phone className="w-6 h-6 text-primary-foreground" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-foreground mb-1">Telefone</h3>
-                <p className="text-muted-foreground text-lg">(51) 3407-2987</p>
-                <p className="text-muted-foreground text-lg">(51) 99997-0887</p>
-              </div>
-            </div>
-
-            {/* Email */}
-            <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-6 flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center shrink-0">
-                <Mail className="w-6 h-6 text-primary-foreground" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-foreground mb-1">E-mail</h3>
-                <p className="text-muted-foreground text-lg">mbsentulho@hotmail.com</p>
-              </div>
-            </div>
-
-            {/* Endereço */}
-            <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-6 flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center shrink-0">
-                <MapPin className="w-6 h-6 text-primary-foreground" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-foreground mb-1">Endereço</h3>
-                <p className="text-muted-foreground">
-                  Rua Trópicos, 149 , Porto Alegre, RS, Brasil<br />
-                </p>
-              </div>
-            </div>
-
-            {/* Horário */}
-            <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-6 flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center shrink-0">
-                <Clock className="w-6 h-6 text-primary-foreground" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-foreground mb-1">Horário</h3>
-                <p className="text-muted-foreground">
-                  Seg-Sex: 09:00 - 18:00<br />
-                </p>
-              </div>
+            <div className="mt-10 divide-y divide-border border-y border-border">
+              <Info icon={Mail} label="E-mail" lines={ ["mbsentulho@hotmail.com"] } />
+              <Info icon={MapPin} label="Endereço" lines={["Rua Trópicos, 149", "Porto Alegre, RS"]} />
+              <Info icon={Clock} label="Horário" lines={["Seg–Sex: 9h – 18h", "Sábado: 9h – 13h"]} />
             </div>
           </div>
 
-          {/* Botão WhatsApp */}
-          <div className="flex justify-center">
-            <Button
-              size="sm"
-              className="bg-green-500 hover:bg-green-600 text-white font-bold text-sm md:text-base px-6 py-4 md:px-8 md:py-6 rounded-full shadow-lg whitespace-normal text-center h-auto min-h-0"
-            >
-              <a
-                href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 leading-tight"
-              >
-                <MessageCircle className="w-5 h-5 md:w-5 md:h-5 shrink-0" />
-                <span>Solicitar Orçamento via WhatsApp</span>
-              </a>
-            </Button>
-          </div>
+          <form
+            className="bg-ink text-cream p-8 md:p-10 space-y-5"
+            onSubmit={(e) => {
+              e.preventDefault()
+              const formData = new FormData(e.currentTarget)
+              const nome = String(formData.get("nome") ?? "").trim()
+              const endereco = String(formData.get("endereco") ?? "").trim()
+              const mensagem = String(formData.get("mensagem") ?? "").trim()
+
+              const parts = [
+                "Olá! Gostaria de solicitar um orçamento para aluguel de caçamba.",
+                nome ? `Nome: ${nome}` : null,
+                endereco ? `Endereço da obra: ${endereco}` : null,
+                mensagem ? `Mensagem: ${mensagem}` : null,
+              ].filter(Boolean)
+
+              const whatsappHref = `${whatsappBase}?text=${encodeURIComponent(parts.join("\n"))}`
+              window.open(whatsappHref, "_blank")
+            }}
+          >
+            <div className="flex items-center gap-3 text-primary">
+              <Send className="w-5 h-5" />
+              <h3 className="text-2xl text-cream">Peça seu orçamento</h3>
+            </div>
+            <Field name="nome" label="Nome" placeholder="Seu nome completo" />
+            <Field name="endereco" label="Endereço da obra" placeholder="Rua, bairro, cidade" />
+            <div>
+              <label className="text-xs uppercase tracking-widest text-cream/60">Mensagem</label>
+              <textarea
+                name="mensagem"
+                rows={4}
+                placeholder="Tipo de obra, tamanho desejado..."
+                className="mt-2 w-full bg-transparent border border-cream/20 px-4 py-3 text-cream placeholder:text-cream/30 focus:border-primary focus:outline-none"
+              />
+            </div>
+            <button type="submit" className="w-full cursor-pointer bg-primary text-primary-foreground py-4 font-semibold hover:bg-cream transition-colors inline-flex items-center justify-center gap-2">
+              <MessageCircle className="w-4 h-4" />
+              Enviar via WhatsApp
+            </button>
+          </form>
         </div>
       </div>
     </section>
+  )
+}
+
+function Info({ icon: Icon, label, lines }: { icon: typeof Mail; label: string; lines: string[] }) {
+  return (
+    <div className="flex gap-5 py-5">
+      <Icon className="w-5 h-5 text-primary mt-1 shrink-0" strokeWidth={1.5} />
+      <div>
+        <div className="text-xs uppercase tracking-widest text-muted-foreground">{label}</div>
+        {lines.map((line) => (
+          <div key={line} className="text-base text-foreground">
+            {line}
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function Field({ name, label, placeholder }: { name: string; label: string; placeholder: string }) {
+  return (
+    <div>
+      <label className="text-xs uppercase tracking-widest text-cream/60">{label}</label>
+      <input
+        name={name}
+        type="text"
+        placeholder={placeholder}
+        className="mt-2 w-full bg-transparent border border-cream/20 px-4 py-3 text-cream placeholder:text-cream/30 focus:border-primary focus:outline-none"
+      />
+    </div>
   )
 }

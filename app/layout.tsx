@@ -1,12 +1,18 @@
 import type { Metadata } from 'next'
-import { Roboto } from 'next/font/google'
+import { Archivo_Black, Inter } from 'next/font/google'
 import './globals.css'
 import { sitePath } from '@/lib/site-path'
 
-const roboto = Roboto({
+const inter = Inter({
   subsets: ['latin'],
   weight: ['400', '500', '700'],
-  variable: '--font-roboto',
+  variable: '--font-inter',
+})
+
+const archivoBlack = Archivo_Black({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-archivo-black',
 })
 
 export const metadata: Metadata = {
@@ -24,8 +30,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="pt-BR" className="bg-background">
-      <body className={`${roboto.variable} font-sans antialiased`}>
+    <html lang="pt-BR" className={`${inter.variable} ${archivoBlack.variable} bg-background`}>
+      <body className="font-sans antialiased">
         {children}
       </body>
     </html>
